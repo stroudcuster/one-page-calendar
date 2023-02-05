@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>one_page_calendar.model module &mdash; Flask One Page Calendar 1.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/sphinx_highlight.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Flask One Page Calendar
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <!-- Local TOC -->
+              <div class="local-toc"><ul>
+<li><a class="reference internal" href="#">one_page_calendar.model module</a><ul>
+<li><a class="reference internal" href="#one_page_calendar.model.Cardinal"><code class="docutils literal notranslate"><span class="pre">Cardinal</span></code></a></li>
+<li><a class="reference internal" href="#one_page_calendar.model.Day"><code class="docutils literal notranslate"><span class="pre">Day</span></code></a></li>
+<li><a class="reference internal" href="#one_page_calendar.model.Month"><code class="docutils literal notranslate"><span class="pre">Month</span></code></a></li>
+<li><a class="reference internal" href="#one_page_calendar.model.OnePageCal"><code class="docutils literal notranslate"><span class="pre">OnePageCal</span></code></a><ul>
+<li><a class="reference internal" href="#one_page_calendar.model.OnePageCal.dom_rows"><code class="docutils literal notranslate"><span class="pre">OnePageCal.dom_rows()</span></code></a></li>
+<li><a class="reference internal" href="#one_page_calendar.model.OnePageCal.doms_for_dow"><code class="docutils literal notranslate"><span class="pre">OnePageCal.doms_for_dow()</span></code></a></li>
+<li><a class="reference internal" href="#one_page_calendar.model.OnePageCal.dow_for_dom"><code class="docutils literal notranslate"><span class="pre">OnePageCal.dow_for_dom()</span></code></a></li>
+<li><a class="reference internal" href="#one_page_calendar.model.OnePageCal.dow_rows"><code class="docutils literal notranslate"><span class="pre">OnePageCal.dow_rows()</span></code></a></li>
+<li><a class="reference internal" href="#one_page_calendar.model.OnePageCal.mo_col_idx"><code class="docutils literal notranslate"><span class="pre">OnePageCal.mo_col_idx()</span></code></a></li>
+<li><a class="reference internal" href="#one_page_calendar.model.OnePageCal.month_rows"><code class="docutils literal notranslate"><span class="pre">OnePageCal.month_rows()</span></code></a></li>
+<li><a class="reference internal" href="#one_page_calendar.model.OnePageCal.set_month"><code class="docutils literal notranslate"><span class="pre">OnePageCal.set_month()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#one_page_calendar.model.OnePageCalBase"><code class="docutils literal notranslate"><span class="pre">OnePageCalBase</span></code></a><ul>
+<li><a class="reference internal" href="#one_page_calendar.model.OnePageCalBase.build_dom_grid"><code class="docutils literal notranslate"><span class="pre">OnePageCalBase.build_dom_grid()</span></code></a></li>
+<li><a class="reference internal" href="#one_page_calendar.model.OnePageCalBase.build_dow_grid"><code class="docutils literal notranslate"><span class="pre">OnePageCalBase.build_dow_grid()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#one_page_calendar.model.OnePageCalFactory"><code class="docutils literal notranslate"><span class="pre">OnePageCalFactory</span></code></a><ul>
+<li><a class="reference internal" href="#one_page_calendar.model.OnePageCalFactory.for_year"><code class="docutils literal notranslate"><span class="pre">OnePageCalFactory.for_year()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Flask One Page Calendar</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a></li>
+      <li class="breadcrumb-item active">one_page_calendar.model module</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/model.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="one-page-calendar-model-module">
+<span id="model"></span><h1>one_page_calendar.model module<a class="headerlink" href="#one-page-calendar-model-module" title="Permalink to this heading"></a></h1>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="genindex.html">Index</a></li>
+</ul>
+</div>
+<span class="target" id="module-one_page_calendar.model"></span><dl class="py class">
+<dt class="sig sig-object py" id="one_page_calendar.model.Cardinal">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">one_page_calendar.model.</span></span><span class="sig-name descname"><span class="pre">Cardinal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#one_page_calendar.model.Cardinal" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>A Enum to represent the ordinals from First to Fourth, plus a value to represent All</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="one_page_calendar.model.Day">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">one_page_calendar.model.</span></span><span class="sig-name descname"><span class="pre">Day</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#one_page_calendar.model.Day" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>An Enum to represent the days of the week</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="one_page_calendar.model.Month">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">one_page_calendar.model.</span></span><span class="sig-name descname"><span class="pre">Month</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">value</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#one_page_calendar.model.Month" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Enum</span></code></p>
+<p>An Enum to represent the months of the year, plus a NoMonth value</p>
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="one_page_calendar.model.OnePageCal">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">one_page_calendar.model.</span></span><span class="sig-name descname"><span class="pre">OnePageCal</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#one_page_calendar.model.OnePageCal" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class implements a calendar that covers an entire year within a single concise representation, which consists
+of three grids: a Month grid, a Day of the Week grid, and a Day of the Month grid.  The latter two are invariant
+from year to year.  The month grid is built starting with the day of week of the January 1st for a given year.
+These grids are related as follows: the columns of the Month grid and the Day of the Week grid are aligned and the
+rows of the Day of the Month grid and the Day of the Week grid are aligned.  Each month is</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="one_page_calendar.model.OnePageCal.dom_rows">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dom_rows</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#one_page_calendar.model.OnePageCal.dom_rows" title="Permalink to this definition"></a></dt>
+<dd><p>This method returns the rows of the Day of the Month grid</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>yields the rows of the Day of the Month grid one row at a time</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="one_page_calendar.model.OnePageCal.doms_for_dow">
+<span class="sig-name descname"><span class="pre">doms_for_dow</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">month</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#one_page_calendar.model.Month" title="one_page_calendar.model.Month"><span class="pre">Month</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dow</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#one_page_calendar.model.Day" title="one_page_calendar.model.Day"><span class="pre">Day</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#one_page_calendar.model.OnePageCal.doms_for_dow" title="Permalink to this definition"></a></dt>
+<dd><p>This method returns the days of the month within the specified Month that the specified Day of the Week falls</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>month</strong> (<a class="reference internal" href="#one_page_calendar.model.Month" title="one_page_calendar.model.Month"><em>one_page_calendar.model.Month</em></a>) – The specified Month</p></li>
+<li><p><strong>dow</strong> (<a class="reference internal" href="#one_page_calendar.model.Day" title="one_page_calendar.model.Day"><em>one_page_calendar.model.Day</em></a>) – The specified Day of the week</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a list containing the days of the month as described above</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>list[int]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="one_page_calendar.model.OnePageCal.dow_for_dom">
+<span class="sig-name descname"><span class="pre">dow_for_dom</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">month</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#one_page_calendar.model.Month" title="one_page_calendar.model.Month"><span class="pre">Month</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">dom</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#one_page_calendar.model.Day" title="one_page_calendar.model.Day"><span class="pre">Day</span></a></span></span><a class="headerlink" href="#one_page_calendar.model.OnePageCal.dow_for_dom" title="Permalink to this definition"></a></dt>
+<dd><p>This method returns the Day the corresponds to the specified Month and day of month</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>month</strong> (<a class="reference internal" href="#one_page_calendar.model.Month" title="one_page_calendar.model.Month"><em>one_page_calendar.model.Month</em></a>) – The specified Month</p></li>
+<li><p><strong>dom</strong> (<em>int</em>) – the specified day of the month</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the day of the week that corresponds to the specified Month and Day of Month</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#one_page_calendar.model.Day" title="one_page_calendar.model.Day">one_page_calendar.model.Day</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="one_page_calendar.model.OnePageCal.dow_rows">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dow_rows</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#one_page_calendar.model.OnePageCal.dow_rows" title="Permalink to this definition"></a></dt>
+<dd><p>This method returns the rows of the Days of the Week grid</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>yields the rows of the Days of the Week grid one row at a time</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="one_page_calendar.model.OnePageCal.mo_col_idx">
+<span class="sig-name descname"><span class="pre">mo_col_idx</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">month</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#one_page_calendar.model.Month" title="one_page_calendar.model.Month"><span class="pre">Month</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">int</span></span></span><a class="headerlink" href="#one_page_calendar.model.OnePageCal.mo_col_idx" title="Permalink to this definition"></a></dt>
+<dd><p>This method returns the column index to which the specified Month was assigned by the set_month method.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>month</strong> (<a class="reference internal" href="#one_page_calendar.model.Month" title="one_page_calendar.model.Month"><em>one_page_calendar.model.Month</em></a>) – The month whose column index will be returned</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the column index</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="one_page_calendar.model.OnePageCal.month_rows">
+<span class="sig-name descname"><span class="pre">month_rows</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#one_page_calendar.model.OnePageCal.month_rows" title="Permalink to this definition"></a></dt>
+<dd><p>This method returns the rows of the Month grid</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>yields the rows of the Month gris one row at a time</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>np.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="one_page_calendar.model.OnePageCal.set_month">
+<span class="sig-name descname"><span class="pre">set_month</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dow</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#one_page_calendar.model.Day" title="one_page_calendar.model.Day"><span class="pre">Day</span></a></span></em>, <em class="sig-param"><span class="n"><span class="pre">month</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#one_page_calendar.model.Month" title="one_page_calendar.model.Month"><span class="pre">Month</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#one_page_calendar.model.OnePageCal.set_month" title="Permalink to this definition"></a></dt>
+<dd><p>This method places a Month value in the appropriate cell of the Month grid.  The column index is derived
+from the Day value that corresponds to the Months first day and the row index is the first row within
+the column that has not had a Month assigned to it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>dow</strong> (<a class="reference internal" href="#one_page_calendar.model.Day" title="one_page_calendar.model.Day"><em>one_page_calendar.model.Day</em></a>) – The day of the week of the first day of the specified month</p></li>
+<li><p><strong>month</strong> (<a class="reference internal" href="#one_page_calendar.model.Month" title="one_page_calendar.model.Month"><em>one_page_calendar.model.Month</em></a>) – The month to be placed in the Month grid</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="one_page_calendar.model.OnePageCalBase">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">one_page_calendar.model.</span></span><span class="sig-name descname"><span class="pre">OnePageCalBase</span></span><a class="headerlink" href="#one_page_calendar.model.OnePageCalBase" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>This class provides methods that are used in the __init__ method of the OnePageCal class</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="one_page_calendar.model.OnePageCalBase.build_dom_grid">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">build_dom_grid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#one_page_calendar.model.OnePageCalBase.build_dom_grid" title="Permalink to this definition"></a></dt>
+<dd><p>This method builds the Day of the Month grid as a numpy array of integers with a shape of (7, 5).  The series
+proceeds in a column-wise order</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the Day of the Month grid</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>numpy.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="one_page_calendar.model.OnePageCalBase.build_dow_grid">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">build_dow_grid</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#one_page_calendar.model.OnePageCalBase.build_dow_grid" title="Permalink to this definition"></a></dt>
+<dd><p>This method builds the Day of the Week grid as a numpy array of Day enums with a shape of (7,7).  The day
+sequence proceeds in a column-wise order.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>the Day of the Week grid</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>numpy.array</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt class="sig sig-object py" id="one_page_calendar.model.OnePageCalFactory">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">one_page_calendar.model.</span></span><span class="sig-name descname"><span class="pre">OnePageCalFactory</span></span><a class="headerlink" href="#one_page_calendar.model.OnePageCalFactory" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>A factory class used to create a OnePageCal instance for a given year</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="one_page_calendar.model.OnePageCalFactory.for_year">
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">for_year</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">year</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference internal" href="#one_page_calendar.model.OnePageCal" title="one_page_calendar.model.OnePageCal"><span class="pre">OnePageCal</span></a></span></span><a class="headerlink" href="#one_page_calendar.model.OnePageCalFactory.for_year" title="Permalink to this definition"></a></dt>
+<dd><p>This method should be used to create instances of OnePageCal rather than invoking the class’ __init__ method
+directly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>year</strong> (<em>int</em>) – the year to be used in creating the OnePageCal instance</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a OnePageCal instance for the specified year</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p><a class="reference internal" href="#one_page_calendar.model.OnePageCal" title="one_page_calendar.model.OnePageCal">one_page_calendar.model.OnePageCal</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2023, Stroud Custer.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

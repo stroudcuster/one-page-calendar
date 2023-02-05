@@ -1,0 +1,19 @@
+{% extends "calendar.html" %}
+{% block style %}
+    {{ super() }}
+    td.{{ sel_month }} {
+        color: red;
+    }
+    {% for dom in sel_doms %}
+    td.dom{{ dom }} {
+        color: red;
+    }
+    td.dow-col-{{ sel_month_col }}-{{ sel_dow }} {
+        color: red;
+    }
+    {% endfor %}
+{% endblock %}
+{% block result %}
+    <p>{{ result }}</p>
+    <p><a href="/calendar/{{ year }}">Look up another day of week or day of the month.</a></p>
+{% endblock %}

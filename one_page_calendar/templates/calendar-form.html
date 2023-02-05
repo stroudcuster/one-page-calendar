@@ -1,0 +1,14 @@
+{% extends "calendar.html" %}
+{% block form %}
+<h2>Select a month and find the day(s) of the month for a selected day,</h2>
+<h2>or the day for a selected day of the month</h2>
+    <form method="POST">
+        {{ form.hidden_tag() }}
+        <span class="label">{{ form.month_selection.label }}</span><span class="selection-list">{{ form.month_selection }}</span><br>
+        <span class="label">{{ form.interval_selection.label }}</span><span class="selection-list">{{ form.interval_selection }}</span>
+        <span class="label">{{ form.day_selection.label }}</span><span class="selection-list">{{ form.day_selection }}</span><br>
+        <p><span class="label">or</span></p><br>
+        <span class="label">{{ form.day_of_month.label }}</span><span class="entry">{{ form.day_of_month}}</span><br>
+        <span class="button">{{ form.submit }}</span>
+    </form>
+{% endblock %}

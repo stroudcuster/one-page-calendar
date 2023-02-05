@@ -1,0 +1,4 @@
+include docs/source/*.rst
+include one_page_calendar/templates/*.html
+include docs/source/_static/one-page-calendar.png
+
