@@ -1,4 +1,5 @@
 {% extends "calendar.html" %}
+{% if errors|length == 0 %}
 {% block style %}
     {{ super() }}
     td.{{ sel_month }} {
@@ -13,7 +14,11 @@
     }
     {% endfor %}
 {% endblock %}
+{% endif %}
 {% block result %}
-    <p>{{ result }}</p>
+    {% for error in errors %}
+        <p class="error-msg">{{ error }}</p>
+    {% endfor %}
+    <p class="result">{{ result }}</p>
     <p><a href="/calendar/{{ year }}">Look up another day of week or day of the month.</a></p>
 {% endblock %}

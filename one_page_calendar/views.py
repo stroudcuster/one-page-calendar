@@ -1,4 +1,5 @@
 from flask import Flask, render_template
+from wtforms import ValidationError
 
 import one_page_calendar.model as model
 import one_page_calendar.forms as forms
@@ -12,7 +13,7 @@ calendars: dict[int, model.OnePageCal] = {}
 
 
 @app.route('/calendar/<year_str>', methods=['GET'])
-def calendar_get(year_str: str) :
+def calendar_get(year_str: str):
     """
     Decorated with @app.route('/calender/<year_str>, methods=['GET']).
     This method creates or retrieves a one_page_calendar.OnePageCal instance for the specified year and renders an
@@ -85,15 +86,28 @@ def calendar_post(year_str):
             sel_doms = [form.day_of_month.data]
             result = f'{model.Month(form.month_selection.data).name} {util.ordinal(form.day_of_month.data)} is a ' \
                      f'{sel_dow.name}'
-    return render_template('calendar-result.html', year=year,
-                           month_rows=[row for row in cal.month_rows()],
-                           dom_rows=[row for row in cal.dom_rows()],
-                           dow_rows=[row for row in cal.dow_rows()],
-                           sel_month=sel_month.name,
-                           sel_month_col=sel_month_col,
-                           sel_doms=sel_doms,
-                           sel_dow=sel_dow.name,
-                           result=result)
+        return render_template('calendar-result.html', year=year,
+                               month_rows=[row for row in cal.month_rows()],
+                               dom_rows=[row for row in cal.dom_rows()],
+                               dow_rows=[row for row in cal.dow_rows()],
+                               sel_month=sel_month.name,
+                               sel_month_col=sel_month_col,
+                               sel_doms=sel_doms,
+                               sel_dow=sel_dow.name,
+                               result=result,
+                               error=[])
+    else:
+        errors = [error[0] for error in form.errors.values()]
+        return render_template('calendar-result.html', year=year,
+                               month_rows=[row for row in cal.month_rows()],
+                               dom_rows=[row for row in cal.dom_rows()],
+                               dow_rows=[row for row in cal.dow_rows()],
+                               sel_month='None',
+                               sel_month_col=0,
+                               sel_doms=[],
+                               sel_dow='None',
+                               result=' ',
+                               errors=errors)
 
 
 

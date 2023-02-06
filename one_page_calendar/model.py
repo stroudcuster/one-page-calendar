@@ -63,7 +63,7 @@ max_dom: dict[Month, int] = {
     Month.August: 31,
     Month.September: 30,
     Month.October: 31,
-    Month.November:30,
+    Month.November: 30,
     Month.December: 31
 }
 

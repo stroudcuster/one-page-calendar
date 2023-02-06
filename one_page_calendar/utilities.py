@@ -15,15 +15,30 @@ def ordinal(number: int):
         if 0 <= ones < 4:
             match ones:
                 case 0:
-                    out = f'{number:2d}th'
+                    if mask > 0:
+                        out = f'{number:2d}th'
+                    else:
+                        out = f'{number:d}th'
                 case 1:
-                    out = f'{number:2d}st'
+                    if mask > 0:
+                        out = f'{number:2d}st'
+                    else:
+                        out = f'{number:d}st'
                 case 2:
-                    out = f'{number:2d}nd'
+                    if mask > 0:
+                        out = f'{number:2d}nd'
+                    else:
+                        out = f'{number:d}nd'
                 case 3:
-                    out = f'{number:2d}rd'
+                    if mask > 0:
+                        out = f'{number:2d}rd'
+                    else:
+                        out = f'{number:d}rd'
         else:
-            out = f'{number:<2d}th'
+            if mask > 0:
+                out = f'{number:<2d}th'
+            else:
+                out = f'{number:d}th'
     else:
         out = f'{number:<2d}th'
     return out
